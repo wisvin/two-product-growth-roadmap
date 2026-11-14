@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f1eee6">
+<title>Two Product Lines — Growth Strategy</title>
+<style>
+:root{--paper:#f5f5f0;--ink:#11130f;--muted:#55594f;--line:#d8dbcf;--lime:#c9f45a;--green:#20251d;--orange:#c9f45a;--white:#fff;--serif:Georgia,'Times New Roman',serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;line-height:1.5}a{color:inherit}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}
+.topbar{height:70px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:800}.topbar .right{color:var(--muted);letter-spacing:.08em}
+.hero{min-height:690px;position:relative;overflow:hidden;padding:36px 0 54px;background:radial-gradient(circle at 12% 10%,#e8eadf 0,transparent 32%),radial-gradient(circle at 88% 85%,#e9ecdf 0,transparent 28%),var(--paper)}
+.hero:after{content:"";position:absolute;width:640px;height:640px;border:1px solid #cbd0c1;border-radius:50%;right:-120px;top:100px;box-shadow:0 0 0 55px #eceee7,0 0 0 56px #d9ddcf,0 0 0 112px #f0f1eb,0 0 0 113px #d9ddcf;pointer-events:none;animation:orbit 28s linear infinite}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:45px;align-items:center;position:relative;z-index:1;padding:88px 0 0}
+.kicker{font-size:11px;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:var(--green);display:flex;align-items:center;gap:10px}.kicker:before{content:"";width:30px;height:2px;background:var(--orange)}
+h1{font-size:clamp(52px,7vw,94px);line-height:.91;letter-spacing:-.075em;margin:24px 0 25px;max-width:720px;font-weight:900}
+h1 span{font-family:inherit;font-style:normal;font-weight:950;letter-spacing:-.075em;color:var(--green)}
+.lead{font-size:18px;max-width:570px;color:#555b50;line-height:1.6}
+.hero-bottom{display:flex;align-items:center;gap:14px;margin-top:32px}.button{display:inline-flex;align-items:center;gap:12px;text-decoration:none;background:var(--ink);color:white;padding:14px 18px;font-size:12px;font-weight:800;letter-spacing:.04em}.button i{font-style:normal;color:var(--lime);font-size:18px}.small-note{font-size:11px;color:var(--muted);max-width:160px;line-height:1.35}
+.hero-art{height:420px;position:relative;display:grid;place-items:center}
+.art-circle{width:310px;height:310px;border-radius:50%;background:var(--lime);position:absolute;right:60px;top:45px;animation:breathe 6s ease-in-out infinite alternate}
+@keyframes breathe{to{transform:scale(1.06);border-radius:44% 56% 51% 49%}}
+.poster{position:relative;z-index:1;width:300px;min-height:355px;background:var(--green);color:white;padding:25px;border-radius:26px;transform:rotate(4deg);box-shadow:18px 22px 0 #11130f18;animation:posterfloat 5s ease-in-out infinite}
+@keyframes posterfloat{0%,100%{transform:rotate(5deg) translateY(0)}50%{transform:rotate(2deg) translateY(-12px)}}
+.poster-top{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#d9e4d7}.poster-title{font-family:inherit;font-weight:950;font-size:43px;line-height:.96;margin:48px 0 18px;letter-spacing:-.07em}.poster-rule{height:1px;background:#ffffff50;margin:20px 0}.poster-bottom{display:flex;justify-content:space-between;align-items:end;font-size:10px;color:#d9e4d7}.poster-stamp{width:58px;height:58px;border:1px solid var(--lime);border-radius:18px;display:grid;place-items:center;color:var(--ink);background:var(--lime);font-size:10px;font-weight:950;text-align:center;line-height:1.1;transform:rotate(-8deg)}
+.hero-index{display:flex;gap:30px;margin-top:70px;border-top:1px solid var(--line);padding-top:20px;position:relative;z-index:1}.hero-index div{display:flex;align-items:baseline;gap:9px}.hero-index b{font-family:var(--serif);font-size:28px;font-weight:400}.hero-index span{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+section{padding:105px 0}.section-top{display:flex;justify-content:space-between;align-items:start;gap:40px;margin-bottom:48px}.section-no{font-family:inherit;font-size:12px;color:var(--orange);font-style:normal;font-weight:950;letter-spacing:.1em;text-transform:uppercase}.section-title{max-width:760px}.section-title h2{font-size:clamp(36px,5vw,62px);line-height:.98;letter-spacing:-.065em;margin:13px 0 16px}.section-title p{font-size:16px;color:var(--muted);max-width:650px;margin:0}.side-note{max-width:190px;color:var(--muted);font-size:11px;border-left:1px solid var(--line);padding-left:17px;margin-top:36px}
+.product-grid{display:grid;grid-template-columns:1fr 1fr;border-top:0;border-bottom:0}.product{padding:28px;border:1px solid var(--line);border-radius:24px;background:#fff;min-height:225px;box-shadow:0 12px 35px #25256b08}.product+ .product{border-left:0;padding-left:28px}.product .label{font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--green);font-weight:900}.product h3{font-size:27px;letter-spacing:-.04em;margin:25px 0 10px}.product p{font-size:14px;color:var(--muted);max-width:460px;margin:0}
+.process{background:#11112a;color:#f8f7ff;overflow:hidden}.process .section-title p{color:#aeb4a9}.process .section-no{color:var(--lime)}.process .kicker{color:var(--lime)}
+.scroll-system{display:grid;grid-template-columns:.95fr 1.05fr;gap:75px;align-items:start}.visual-column{min-height:900px;position:relative}.visual-sticky{height:570px;position:sticky;top:calc(50vh - 285px);display:grid;place-items:center}
+.system-board{width:min(100%,410px);height:470px;border:1px solid #596050;background:#20251d;padding:24px;border-radius:28px;position:relative;overflow:hidden;box-shadow:18px 18px 0 #c8ff4520}
+.board-head{display:flex;justify-content:space-between;color:#b7c0ae;font-size:9px;letter-spacing:.15em;text-transform:uppercase}.board-number{font-family:var(--serif);font-size:12px;color:var(--lime)}
+.board-screen{position:absolute;inset:65px 24px 24px;opacity:0;transform:translateY(25px);filter:blur(4px);transition:opacity .6s,transform .7s,filter .6s}.board-screen.active{opacity:1;transform:none;filter:none}
+.board-screen h3{font-size:34px;line-height:1;letter-spacing:-.06em;margin:18px 0 15px;max-width:300px}.board-screen p{font-size:12px;color:#b7c0ae;max-width:300px}
+.bar{height:8px;background:#3b4439;margin:12px 0;width:100%;position:relative;overflow:hidden}.bar:after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w,65%);background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform 1s .15s}.board-screen.active .bar:after{transform:scaleX(1)}
+.board-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:25px}.board-tags span{font-size:9px;padding:8px 9px;border:1px solid #65705f;color:var(--lime);letter-spacing:.06em}
+.board-graph{height:110px;display:flex;align-items:end;gap:8px;margin:25px 0}.board-graph i{display:block;flex:1;background:var(--lime);height:var(--h);transform:scaleY(.08);transform-origin:bottom;transition:transform .8s}.board-screen.active .board-graph i{transform:scaleY(1)}
+.steps{padding-top:5px}.step{min-height:190px;border-top:1px solid #39395d;padding:25px 0 28px;opacity:.42;transition:opacity .45s,transform .45s}.step.active{opacity:1;transform:translateX(8px)}.step-head{display:flex;align-items:center;gap:14px}.step-index{font-family:inherit;font-size:14px;color:var(--lime);font-style:normal;font-weight:950}.step h3{font-size:22px;letter-spacing:-.04em;margin:0}.step p{font-size:14px;line-height:1.6;color:#c4c3df;max-width:470px;margin:13px 0 0}
+.delivery{background:#e8e7ff}.delivery .section-title{max-width:790px}.milestone-list{border-top:1px solid var(--line)}.milestone{display:grid;grid-template-columns:160px 1fr 150px;gap:25px;padding:28px 0;border-bottom:1px solid #d1d0ed;align-items:start}.milestone .m-no{font-family:inherit;font-size:11px;color:var(--orange);font-style:normal;font-weight:950;letter-spacing:.12em;text-transform:uppercase}.milestone h3{font-size:26px;letter-spacing:-.045em;margin:0 0 9px}.milestone p{margin:0;color:var(--muted);font-size:14px;max-width:650px}.milestone ul{display:flex;flex-wrap:wrap;gap:7px;padding:0;margin:17px 0 0;list-style:none}.milestone li{font-size:10px;border:1px solid #c3c7b8;padding:6px 9px;border-radius:99px}.deadline{justify-self:end;background:var(--lime);padding:10px 12px;font-size:10px;font-weight:900;letter-spacing:.1em}
+.search{background:#f5f5f0}.search-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:0;border-bottom:0}.search-card{padding:25px 24px 28px 0}.search-card+.search-card{border-left:1px solid var(--line);padding-left:24px}.search-card .s-label{font-size:10px;letter-spacing:.16em;color:var(--orange);font-weight:900}.search-card h3{font-size:24px;letter-spacing:-.04em;margin:23px 0 10px}.search-card p{font-size:13px;color:var(--muted);margin:0}
+.last{background:var(--lime);padding:75px 0}.last-inner{display:flex;align-items:center;justify-content:space-between;gap:35px}.last h2{font-size:clamp(34px,5vw,58px);line-height:.95;letter-spacing:-.06em;max-width:720px;margin:0}.last p{font-size:13px;color:#414a31;max-width:340px}.last .button{background:var(--ink);white-space:nowrap}
+footer{background:var(--ink);color:#e9ebdf;padding:25px 0;font-size:10px;letter-spacing:.06em}footer .wrap{display:flex;justify-content:space-between;gap:20px}footer span{color:#9da697}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s,transform .7s}.reveal.in{opacity:1;transform:none}
+@media(max-width:800px){.wrap{width:min(100% - 34px,600px)}.hero-grid{grid-template-columns:1fr;padding-top:60px}.hero-art{height:340px}.hero:after{right:-400px;top:260px}.hero-index{flex-wrap:wrap;gap:17px 24px;margin-top:35px}.section-top{display:block}.side-note{margin-top:20px}.product-grid{grid-template-columns:1fr}.product{padding:23px 0}.product+.product{border-left:0;border-top:1px solid var(--line);padding-left:0}.scroll-system{grid-template-columns:1fr;gap:15px}.visual-column{min-height:410px}.visual-sticky{height:390px;top:5px}.system-board{width:min(100%,350px);height:360px;padding:17px}.board-screen{inset:55px 17px 17px}.board-screen h3{font-size:27px}.board-graph{height:65px}.step{min-height:155px}.step.active{transform:none}.milestone{grid-template-columns:1fr;gap:10px}.deadline{justify-self:start}.search-grid{grid-template-columns:1fr}.search-card{padding:22px 0}.search-card+.search-card{border-left:0;border-top:1px solid var(--line);padding-left:0}.last-inner{display:block}.last p{margin:20px 0}.last .button{display:inline-flex}footer .wrap{display:block}footer span{display:block;margin-top:8px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+/* Cohesive Gen-Z digital studio finish */
+.button{border-radius:14px;background:var(--green);box-shadow:0 8px 0 #899f36;transition:transform .2s,box-shadow .2s}
+.button:hover{transform:translateY(-3px);box-shadow:0 11px 0 #899f36}
+.topbar{border-bottom-color:#d7d6ef}
+.product{border:1px solid var(--line)!important;border-radius:24px!important;background:#fff!important;padding:28px!important;box-shadow:0 12px 35px #25256b08}
+.product-grid{gap:14px}
+.milestone{background:#fff;border:1px solid var(--line);border-radius:22px;padding:25px;margin:12px 0}
+.milestone-list{border:0}
+.milestone li{border-radius:9px;background:#f0f1e9;border-color:#d8dbcf}
+.deadline{border-radius:10px;background:var(--lime)}
+.search-grid{border:0;gap:14px}
+.search-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:25px!important}
+.search-card+.search-card{border-left:1px solid var(--line);padding-left:25px}
+.section-title h2{letter-spacing:-.07em}
+.poster{border-radius:26px}
+.poster-title{font-family:inherit;font-weight:950;letter-spacing:-.07em}
+.art-circle{filter:drop-shadow(0 18px 35px #11130f12)}
+.step.active{background:#292e25;border-radius:15px;padding:25px 18px;opacity:1}
+.step{padding-left:18px;padding-right:18px}
+@media(max-width:800px){.search-card+.search-card{border-left:1px solid var(--line);padding-left:25px}.step.active{padding:20px 15px}}
+
+
+/* Final typography and restrained colour pass */
+body{font-weight:600;color:#11130f}
+.topbar,.kicker,.section-no,.product .label,.poster-top,.poster-bottom,.board-head,.board-number,.deadline,.s-label,footer{font-weight:850}
+h1,.section-title h2,.product h3,.milestone h3,.search-card h3,.last h2,.poster-title,.board-screen h3,.step h3{font-weight:950;color:var(--ink)}
+.lead{font-weight:650;color:#41463d}
+.section-title p,.product p,.milestone p,.search-card p,.step p,.side-note,.last p{font-weight:600;color:#55594f}
+.process .section-title h2,.process .step h3,.process .board-screen h3{color:#fbfcf5}
+.process .section-title p,.process .step p,.process .side-note,.board-screen p{color:#c6cabb}
+.step-index{font-weight:950}
+.poster{background:#20251d}
+.poster-title{color:#fff}
+.poster-top,.poster-bottom{color:#e5e9dd}
+.search-card{color:#11130f}
+.product,.milestone,.search-card{box-shadow:0 12px 32px #11130f08}
+
+</style>
+</head>
+<body>
+<header class="hero">
+ <div class="wrap">
+  <div class="topbar"><div>Digital growth concept <span style="color:var(--orange)">/</span> 2026</div><div class="right">Two product lines · 14-day sprint</div></div>
+  <div class="hero-grid">
+   <div>
+    <div class="kicker">Strategy meets implementation</div>
+    <h1>Make the brand<br><span>impossible to miss.</span></h1>
+    <p class="lead">A two-product growth sprint built to sharpen positioning, create content people care about and turn the website into a clearer path from discovery to enquiry.</p>
+    <div class="hero-bottom"><a class="button" href="#approach">Explore the approach <i>↘</i></a><div class="small-note">A practical, evidence-led plan. No invented performance promises.</div></div>
+   </div>
+   <div class="hero-art"><div class="art-circle"></div><div class="poster"><div class="poster-top"><span>Growth brief / 01</span><span>2026</span></div><div class="poster-title">Good strategy.<br>Better moves.</div><div class="poster-rule"></div><div class="poster-bottom"><span>Research → Reach → Convert</span><div class="poster-stamp">14<br>DAYS</div></div></div></div>
+  </div>
+  <div class="hero-index"><div><b>02</b><span>Product strategies</span></div><div><b>02</b><span>Landing pages</span></div><div><b>30</b><span>Days of content planning</span></div><div><b>90</b><span>Days of priorities</span></div></div>
+ </div>
+</header>
+<main>
+<section>
+ <div class="wrap">
+  <div class="section-top reveal"><div class="section-title"><div class="section-no">01 — The opportunity</div><h2>Two products.<br>Two different reasons to care.</h2><p>Each product line deserves its own audience insight, positioning and route to conversion. The first task is to understand what makes each one relevant to the people most likely to buy.</p></div><div class="side-note">The actual product identities and analytics will be reviewed after the confidentiality agreement and access are provided.</div></div>
+  <div class="product-grid reveal">
+   <article class="product"><div class="label">Product line / A</div><h3>Find the reason to choose.</h3><p>Clarify the target segment, customer motivation, competitive alternatives and strongest product message. Build a marketing direction around those findings.</p></article>
+   <article class="product"><div class="label">Product line / B</div><h3>Create a separate path to discovery.</h3><p>Develop its own buyer persona, positioning, content themes and landing-page journey. Avoid copying the first product's strategy where the audiences differ.</p></article>
+  </div>
+ </div>
+</section>
+<section class="process" id="approach">
+ <div class="wrap">
+  <div class="section-top reveal"><div class="section-title"><div class="section-no">02 — The working method</div><h2>The growth system, in motion.</h2><p>Each stage changes the live strategy board. This is how research becomes marketing, how marketing connects to the website, and how the work is measured.</p></div><div class="side-note" style="border-color:#485247;color:#aeb4a9">The visual is a process model, not a claim about existing business performance.</div></div>
+  <div class="scroll-system">
+   <div class="visual-column"><div class="visual-sticky"><div class="system-board"><div class="board-head"><span>Growth operating system</span><span class="board-number" id="boardNum">01 / 05</span></div>
+    <div class="board-screen active" data-screen="0"><div class="kicker" style="color:var(--lime)">Discover</div><h3>Start with customer reality.</h3><p>Understand the market before choosing the message.</p><div class="bar" style="--w:82%"></div><div class="bar" style="--w:64%"></div><div class="bar" style="--w:73%"></div><div class="board-tags"><span>Personas</span><span>Competitors</span><span>Positioning</span></div></div>
+    <div class="board-screen" data-screen="1"><div class="kicker" style="color:var(--lime)">Attract</div><h3>Give each product a content engine.</h3><p>Build a useful, repeatable social content direction.</p><div class="board-tags"><span>Instagram</span><span>Facebook</span><span>Campaigns</span><span>30-day calendar</span></div><div class="bar" style="--w:90%;margin-top:28px"></div><div class="bar" style="--w:72%"></div></div>
+    <div class="board-screen" data-screen="2"><div class="kicker" style="color:var(--lime)">Convert</div><h3>Make the next action obvious.</h3><p>Align landing-page content, layout and calls to action.</p><div class="board-tags"><span>Product story</span><span>Proof</span><span>CTA</span><span>Mobile QA</span></div><div class="bar" style="--w:78%;margin-top:28px"></div><div class="bar" style="--w:86%"></div></div>
+    <div class="board-screen" data-screen="3"><div class="kicker" style="color:var(--lime)">Get discovered</div><h3>Make product information answer-ready.</h3><p>Help people and search experiences understand the offer.</p><div class="board-tags"><span>SEO</span><span>GEO</span><span>AEO</span><span>FAQs</span></div><div class="bar" style="--w:88%;margin-top:28px"></div><div class="bar" style="--w:68%"></div></div>
+    <div class="board-screen" data-screen="4"><div class="kicker" style="color:var(--lime)">Improve</div><h3>Use evidence to choose what happens next.</h3><p>Set a baseline, track meaningful actions and refine.</p><div class="board-graph"><i style="--h:35%"></i><i style="--h:55%"></i><i style="--h:44%"></i><i style="--h:75%"></i><i style="--h:62%"></i><i style="--h:92%"></i></div><div class="board-tags"><span>Visits</span><span>Clicks</span><span>Enquiries</span></div></div>
+   </div></div></div>
+   <div class="steps">
+    <article class="step active" data-step="0"><div class="step-head"><span class="step-index">01</span><h3>Understand the customer</h3></div><p>Research each product, define customer segments and buyer personas, compare competitors and establish distinct brand positioning.</p></article>
+    <article class="step" data-step="1"><div class="step-head"><span class="step-index">02</span><h3>Build the marketing direction</h3></div><p>Prioritize channels, especially Instagram and Facebook. Create content pillars, campaign ideas and a separate 30-day calendar for each product line.</p></article>
+    <article class="step" data-step="2"><div class="step-head"><span class="step-index">03</span><h3>Improve the website journey</h3></div><p>Refresh the product pages, create or improve two landing pages, strengthen product copy and imagery, clarify calls to action and test desktop and mobile.</p></article>
+    <article class="step" data-step="3"><div class="step-head"><span class="step-index">04</span><h3>Support search and AI discovery</h3></div><p>Apply on-page SEO fundamentals. For GEO and AEO, make product facts clear, answer common customer questions and organize useful information so search and AI answer systems can interpret it.</p></article>
+    <article class="step" data-step="4"><div class="step-head"><span class="step-index">05</span><h3>Measure and prioritize</h3></div><p>Recommend KPIs, tracking methods, practical budgets and a prioritized 90-day roadmap. Establish the baseline before setting performance targets.</p></article>
+   </div>
+  </div>
+ </div>
+</section>
+<section class="delivery">
+ <div class="wrap">
+  <div class="section-top reveal"><div class="section-title"><div class="section-no">03 — The delivery</div><h2>Two milestones.<br>One clear finish line.</h2><p>The work is sequenced to meet the weekly deadlines, with review and feedback built into the process.</p></div><div class="side-note">Delivery timing assumes timely access to product information, WordPress, assets and feedback.</div></div>
+  <div class="milestone-list reveal">
+   <article class="milestone"><div class="m-no">Milestone / 01</div><div><h3>Digital marketing plans</h3><p>Two distinct, editable plans and one prioritized 90-day roadmap.</p><ul><li>Personas & segmentation</li><li>Competitor analysis</li><li>Positioning & channels</li><li>Social strategy</li><li>Two content calendars</li><li>Budget & resources</li><li>KPIs & AI recommendations</li></ul></div><div class="deadline">BY DAY 07</div></article>
+   <article class="milestone"><div class="m-no">Milestone / 02</div><div><h3>WordPress website revamp</h3><p>Two product-line landing pages, improved content and on-page SEO, responsive checks and handover notes.</p><ul><li>Page layout refresh</li><li>Product images & copy</li><li>SEO improvements</li><li>Navigation & CTAs</li><li>Enquiry pathways</li><li>Desktop & mobile QA</li><li>Handover documentation</li></ul></div><div class="deadline">BY DAY 14</div></article>
+  </div>
+ </div>
+</section>
+<section class="search">
+ <div class="wrap">
+  <div class="section-top reveal"><div class="section-title"><div class="section-no">04 — Search visibility</div><h2>Show up where<br>customers are searching.</h2><p>SEO, GEO and AEO overlap, but each highlights a different discovery experience. The practical starting point is clear, accurate and helpful product information.</p></div></div>
+  <div class="search-grid reveal">
+   <article class="search-card"><div class="s-label">01 / SEO</div><h3>Be relevant in search.</h3><p>Improve page titles, headings, descriptions, internal links, image alt text and product-focused keyword relevance.</p></article>
+   <article class="search-card"><div class="s-label">02 / GEO</div><h3>Be understandable to AI.</h3><p>Use consistent product and brand facts, clear entities, credible context and well-organized information that generative systems can interpret.</p></article>
+   <article class="search-card"><div class="s-label">03 / AEO</div><h3>Answer the real question.</h3><p>Structure direct answers to common customer questions, useful FAQs and concise sections that match search intent.</p></article>
+  </div>
+ </div>
+</section>
+<section class="last">
+ <div class="wrap last-inner"><div><div class="kicker">Ready when you are</div><h2>Start with the products.<br>Build from evidence.</h2></div><div><p>Once the NDA is in place and product details, website access and available performance data are shared, the work can begin with a focused review.</p><a class="button" href="#top">Back to the beginning <i>↑</i></a></div></div>
+</section>
+</main>
+<footer><div class="wrap"><div>Prepared for a two-product digital growth assignment</div><span>Product identities and analytics have not yet been provided. No performance results are assumed.</span></div></footer>
+<script>
+const revealIO=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revealIO.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>revealIO.observe(el));
+const steps=[...document.querySelectorAll('.step')],screens=[...document.querySelectorAll('.board-screen')],boardNum=document.getElementById('boardNum');
+const stepIO=new IntersectionObserver(entries=>{
+ const current=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+ if(!current)return;const n=Number(current.target.dataset.step);
+ steps.forEach((el,i)=>el.classList.toggle('active',i===n));
+ screens.forEach((el,i)=>el.classList.toggle('active',i===n));
+ boardNum.textContent=String(n+1).padStart(2,'0')+' / 05';
+},{rootMargin:'-28% 0px -28% 0px',threshold:[0,.2,.45,.7,1]});
+steps.forEach(el=>stepIO.observe(el));
+</script>
+</body>
+</html>
